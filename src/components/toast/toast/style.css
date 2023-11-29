@@ -1,0 +1,88 @@
+.ws-toast {
+    background: #eaeaea;
+    padding: 1em;
+    border: 1px solid #c0c0c0;
+    border-radius: 0.25em;
+    width: 300px;
+    position: fixed;
+    top: 2em;
+    right: 2em;
+    transform: translateX(calc(100% + 2em));
+    overflow: hidden;
+}
+
+.close-toast-btn {
+    background: transparent;
+    cursor: pointer;
+    border: 0;
+    position: absolute;
+    top: 0.2em;
+    right: 0.2em;
+    width: 25px;
+    height: 25px;
+}
+
+.close-modal-btn img {
+    width: 25px;
+    height: 25px;
+}
+
+.ws-show-toast {
+    transform: translateX(0);
+    animation: ws-toast-show-animation 0.25s linear;
+}
+
+.ws-hide-toast {
+    transform: translateX(calc(100% + 2em));
+    animation: ws-toast-hide-animation 0.25s linear;
+}
+
+@keyframes ws-toast-show-animation {
+    from {
+        transform: translateX(calc(100% + 2em));
+    }
+    75% {
+        transform: translateX(calc(-20%));
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes ws-toast-hide-animation {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(100% + 2em));
+    }
+}
+
+.ws-toast span {
+    font-size: 20px;
+}
+
+.ws-toast-status-container {
+    width: 100%;
+    background: #bbbbbb;
+    height: 0.25em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.ws-toast-status-bar {
+    width: 0;
+    height: 100%;
+    animation: ws-toast-autohide-bar-animation;
+    animation-timing-function: linear;
+}
+
+@keyframes ws-toast-autohide-bar-animation {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}

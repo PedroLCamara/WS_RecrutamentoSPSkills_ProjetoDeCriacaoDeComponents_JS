@@ -1,0 +1,118 @@
+.modal-container {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    visibility: hidden;
+}
+
+.modal-show {
+    visibility: unset !important;
+    animation: modal-container-show-animation 0.25s linear;
+}
+
+.modal-sz-big {
+    width: 800px;
+    height: 800px;
+}
+
+.modal-sz-medium {
+    width: 600px;
+    height: 600px;
+}
+
+.modal-sz-small {
+    width: 400px;
+    height: 400px;
+}
+
+.modal-box {
+    background: white;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.modal-show .modal-box {
+    animation: modal-show-animation 0.25s linear;
+}
+
+.modal-hide {
+    animation: modal-container-hide-animation 0.25s linear;
+}
+
+.modal-hide .modal-box {
+    animation: modal-hide-animation 0.25s linear;
+}
+
+.modal-content {
+    margin: 0 2em;
+}
+
+.close-modal-btn {
+    background: transparent;
+    cursor: pointer;
+    border: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 75px;
+    background: linear-gradient(to bottom, white, white, white, transparent);
+}
+
+.close-modal-btn img {
+    width: 25px;
+    height: 25px;
+}
+
+@keyframes modal-show-animation {
+    0% {
+        transform: translateY(-125%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes modal-hide-animation {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-125%);
+        opacity: 1;
+    }
+}
+
+@keyframes modal-container-hide-animation {
+    0% {
+        visibility: unset;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        visibility: unset;
+        background: rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes modal-container-show-animation {
+    0% {
+        visibility: unset;
+        background: rgba(0, 0, 0, 0);
+    }
+    100% {
+        visibility: unset;
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
